@@ -4,7 +4,7 @@
 
 @section('content')
 
-Modificar producto {{$id}}
+Modificar producto {{$producto->id}}
 <div class="row" style="margin-top:40px">
 <div class="offset-md-3 col-md-6">
    <div class="card">
@@ -19,22 +19,22 @@ Modificar producto {{$id}}
 
          <div class="form-group">
             <label for="title">Nombre</label>
-            <input type="text" name="nombre" id="nombre" class="form-control" value="{{ $producto[0] }}">
+            <input type="text" name="nombre" id="nombre" class="form-control" value="{{ $producto->nombre }}">
          </div>
 
          <div class="form-group">
             <label for="title">Precio</label>
-           <input type="number" name="precio" id="precio">
+           <input type="number" name="precio" id="{{ $producto->precio }}">
         </div>
 
         <div class="form-group">
             <label for="title">Categoria</label>
-           <input type="text" name="categoria" id="categoria" class="form-control" value="{{ $producto[1] }}">
+           <input type="text" name="categoria" id="categoria" class="form-control" value="{{ $producto->categoria }}">
         </div>
 
         <div class="form-group">
             <label for="title">Imagen</label>
-           <input type="text" name="imagen" id="imagen" class="form-control">
+           <input type="text" name="imagen" id="imagen" class="form-control" value="{{ $producto->imagen }}">
         </div>
 
          <div class="form-group">
@@ -75,7 +75,7 @@ $key = 0;
        <a href="{{ url('/productos/show/' . $key ) }}">
            <img src="https://picsum.photos/200/300/?random" style="height:200px"/>
            <h4 style="min-height:45px;margin:5px 0 10px 0">
-               {{$producto[0]}}
+               $producto->campo
            </h4>
        </a>
 
